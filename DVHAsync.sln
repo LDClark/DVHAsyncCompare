@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVHAsync.Runner", "DVHAsync.Runner\DVHAsync.Runner.csproj", "{79D069B9-3FFA-4584-A132-C444937EDF9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVHAsync", "DVHAsync\DVHAsync.csproj", "{96E0CE2E-799B-473D-BF00-15DDC693A421}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug-13.6|x64 = Debug-13.6|x64
+		Debug-15.6|x64 = Debug-15.6|x64
+		Release-13.6|x64 = Release-13.6|x64
+		Release-15.6|x64 = Release-15.6|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79D069B9-3FFA-4584-A132-C444937EDF9E}.Debug-13.6|x64.ActiveCfg = Debug-13.6|x64
+		{79D069B9-3FFA-4584-A132-C444937EDF9E}.Debug-13.6|x64.Build.0 = Debug-13.6|x64
+		{79D069B9-3FFA-4584-A132-C444937EDF9E}.Debug-15.6|x64.ActiveCfg = Debug-15.6|x64
+		{79D069B9-3FFA-4584-A132-C444937EDF9E}.Debug-15.6|x64.Build.0 = Debug-15.6|x64
+		{79D069B9-3FFA-4584-A132-C444937EDF9E}.Release-13.6|x64.ActiveCfg = Release-13.6|x64
+		{79D069B9-3FFA-4584-A132-C444937EDF9E}.Release-13.6|x64.Build.0 = Release-13.6|x64
+		{79D069B9-3FFA-4584-A132-C444937EDF9E}.Release-15.6|x64.ActiveCfg = Release-15.6|x64
+		{79D069B9-3FFA-4584-A132-C444937EDF9E}.Release-15.6|x64.Build.0 = Release-15.6|x64
+		{96E0CE2E-799B-473D-BF00-15DDC693A421}.Debug-13.6|x64.ActiveCfg = Debug-13.6|x64
+		{96E0CE2E-799B-473D-BF00-15DDC693A421}.Debug-13.6|x64.Build.0 = Debug-13.6|x64
+		{96E0CE2E-799B-473D-BF00-15DDC693A421}.Debug-15.6|x64.ActiveCfg = Debug-15.6|x64
+		{96E0CE2E-799B-473D-BF00-15DDC693A421}.Debug-15.6|x64.Build.0 = Debug-15.6|x64
+		{96E0CE2E-799B-473D-BF00-15DDC693A421}.Release-13.6|x64.ActiveCfg = Release-13.6|x64
+		{96E0CE2E-799B-473D-BF00-15DDC693A421}.Release-13.6|x64.Build.0 = Release-13.6|x64
+		{96E0CE2E-799B-473D-BF00-15DDC693A421}.Release-15.6|x64.ActiveCfg = Release-15.6|x64
+		{96E0CE2E-799B-473D-BF00-15DDC693A421}.Release-15.6|x64.Build.0 = Release-15.6|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09FB4B73-C18F-4F17-AA85-574F5938F47D}
+	EndGlobalSection
+EndGlobal
