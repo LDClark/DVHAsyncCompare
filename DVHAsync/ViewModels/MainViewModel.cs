@@ -96,14 +96,14 @@ namespace DVHAsync
                         {
                             
                             //var pqm = new PQMSummaryViewModel();
-                            for (int i = 0; i < pqms.Count(); i++)
+                            foreach (var pqm in pqms)
                             {
-                                if (pqms[i].TemplateId == structureId)
+                                if (pqm.TemplateId == structureId)
                                 {
-                                    metric = pqms[i].DVHObjective;
-                                    goal = pqms[i].Goal;
-                                    variation = pqms[i].Variation;
-                                    result = await _esapiService.CalculateMetricDoseAsync(courseId, planId, structureId, metric, pqms[i]);
+                                    metric = pqm.DVHObjective;
+                                    goal = pqm.Goal;
+                                    variation = pqm.Variation;
+                                    result = await _esapiService.CalculateMetricDoseAsync(courseId, planId, structureId, metric, pqm);
                                     met = await _esapiService.EvaluateMetricDoseAsync(result, goal, variation);
                                     MetricResults.Add(new MetricResult
                                     {
@@ -114,7 +114,6 @@ namespace DVHAsync
                                         Result = result
                                     });
                                 }
-                                i++;
                             }                         
                         }
                         catch
