@@ -1,6 +1,6 @@
 ﻿using VMS.TPS.Common.Model.API;
 
-namespace DVHAsync
+namespace DVHAsyncCompare
 {
     public class Plan
     {

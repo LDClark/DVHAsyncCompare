@@ -2,7 +2,7 @@
 using VMS.TPS.Common.Model.API;
 using System.Text.RegularExpressions;
 
-namespace DVHAsync
+namespace DVHAsyncCompare
 {
     // This class works directly with ESAPI objects, but it will be wrapped by EsapiService,
     // which doesn't expose ESAPI objects in order to isolate the script from ESAPI

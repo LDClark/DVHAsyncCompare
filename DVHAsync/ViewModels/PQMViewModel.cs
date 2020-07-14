@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Windows.Media;
+﻿using System.Collections.ObjectModel;
 using VMS.TPS.Common.Model.API;
-using VMS.TPS.Common.Model.Types;
 
-namespace DVHAsync
+namespace DVHAsyncCompare
 {
-    public class PQMSummaryViewModel
+    public class PQMViewModel
     {
         public string TemplateId { get; set; }
         public string[] TemplateCodes { get; set; }

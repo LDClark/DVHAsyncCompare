@@ -1,4 +1,4 @@
-﻿namespace DVHAsync
+﻿namespace DVHAsyncCompare
 {
     public interface ISimpleProgress
     {

@@ -1,12 +1,12 @@
 ﻿<Window
-    x:Class="DVHAsync.MainWindow"
+    x:Class="DVHAsyncCompare.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:cm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
-    xmlns:l="clr-namespace:DVHAsync"
-    Title="DVHAsync"
-    Height="800" Width="800"
+    xmlns:l="clr-namespace:DVHAsyncCompare"
+    Title="DVHAsyncCompare"
+    Height="800" Width="1000"
     WindowStartupLocation="CenterScreen"
     >
 
@@ -34,8 +34,10 @@
             <ColumnDefinition Width="250" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-
-        <DockPanel>
+        
+        <DockPanel
+            LastChildFill="False"
+            >
             <TextBlock
                 DockPanel.Dock="Top"
                 Text="Plans:"
@@ -46,7 +48,7 @@
                 ItemsSource="{Binding Source={StaticResource Plans}}"
                 SelectedItem="{Binding SelectedPlan, NotifyOnSourceUpdated=True}"
                 VerticalAlignment="Stretch"
-                Margin="0,5,0,0"
+                Margin="0,5,0,0"            
                 >
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SourceUpdated">
@@ -86,6 +88,65 @@
                     </GroupStyle>
                 </ListBox.GroupStyle>
             </ListBox>
+            <ComboBox
+                DockPanel.Dock="Bottom"
+                Height="20"
+                Margin="0,5,0,0"
+                ItemsSource="{Binding Plans, NotifyOnSourceUpdated=True}"
+                SelectedItem="{Binding SelectedPlanCompare3, NotifyOnSourceUpdated=True}"
+                >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SourceUpdated">
+                        <i:InvokeCommandAction Command="{Binding AnalyzePlanCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding PlanId, Converter={StaticResource UnderscoreConverter}}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox
+                DockPanel.Dock="Bottom"
+                Height="20"
+                Margin="0,5,0,0"
+                ItemsSource="{Binding Plans, NotifyOnSourceUpdated=True}"
+                SelectedItem="{Binding SelectedPlanCompare2, NotifyOnSourceUpdated=True}"
+                >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SourceUpdated">
+                        <i:InvokeCommandAction Command="{Binding AnalyzePlanCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding PlanId, Converter={StaticResource UnderscoreConverter}}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox
+                DockPanel.Dock="Bottom"
+                Height="20"
+                Margin="0,5,0,0"
+                ItemsSource="{Binding Plans, NotifyOnSourceUpdated=True}"
+                SelectedItem="{Binding SelectedPlanCompare1, NotifyOnSourceUpdated=True}"
+                >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SourceUpdated">
+                        <i:InvokeCommandAction Command="{Binding AnalyzePlanCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding PlanId, Converter={StaticResource UnderscoreConverter}}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <TextBlock
+                DockPanel.Dock="Bottom"
+                Text="Comparison plans:"
+                Margin="0,5,0,0"
+                />
         </DockPanel>
 
         <GridSplitter
@@ -104,14 +165,14 @@
                 Text="Dose metrics:"
                 />
             <DataGrid
-                ItemsSource="{Binding MetricResults}"
+                ItemsSource="{Binding MetricResults}"              
                 IsReadOnly="True"
                 AutoGenerateColumns="False"
                 >
                 <DataGrid.Columns>
                     <DataGridTextColumn
                         Header="Structure ID"
-                        Binding="{Binding StructureId, Converter={StaticResource UnderscoreConverter}}"
+                        Binding="{Binding TemplateId, Converter={StaticResource UnderscoreConverter}}"
                         />
                     <DataGridTextColumn
                         Header="Metric"
@@ -125,16 +186,22 @@
                         Header="Met"
                         Binding="{Binding Met}"
                         />
-                    <DataGridTextColumn
-                        Header="Achieved"
-                        Binding="{Binding Result, StringFormat=\{0:f2\}}"
-                        >
-                        
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
+                    <DataGridTextColumn Binding="{Binding Result, StringFormat=\{0:f2\}}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="{Binding DataContext.SelectedPlan.PlanId, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Converter={StaticResource UnderscoreConverter}}"/>                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding ResultCompare1, StringFormat=\{0:f2\}}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="{Binding DataContext.SelectedPlanCompare1.PlanId, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Converter={StaticResource UnderscoreConverter}}"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding ResultCompare2, StringFormat=\{0:f2\}}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="{Binding DataContext.SelectedPlanCompare2.PlanId, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Converter={StaticResource UnderscoreConverter}}"/>                       </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding ResultCompare3, StringFormat=\{0:f2\}}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="{Binding DataContext.SelectedPlanCompare3.PlanId, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Converter={StaticResource UnderscoreConverter}}"/>                        </DataGridTextColumn.Header>
                     </DataGridTextColumn>
                 </DataGrid.Columns>
             </DataGrid>

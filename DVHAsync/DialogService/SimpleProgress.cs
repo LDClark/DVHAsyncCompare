@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DVHAsync
+namespace DVHAsyncCompare
 {
     public class SimpleProgress : ISimpleProgress
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PlanQualityMetricsAsync.Runner.Properties {
+namespace DVHAsyncCompare.Runner.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace PlanQualityMetricsAsync.Runner.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PlanQualityMetricsAsync.Runner.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DVHAsyncCompare.Runner.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

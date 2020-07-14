@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace DVHAsync
+namespace DVHAsyncCompare
 {
     public static class AssemblyHelper
     {

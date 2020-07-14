@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using VMS.TPS.Common.Model.API;
 
-namespace DVHAsync
+namespace DVHAsyncCompare
 {
     class PQMCoveredDoseAtVolume
     {

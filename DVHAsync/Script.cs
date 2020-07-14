@@ -1,4 +1,4 @@
-﻿using DVHAsync;
+﻿using DVHAsyncCompare;
 using EsapiEssentials.Plugin;
 
 namespace VMS.TPS

@@ -6,17 +6,17 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using VMS.TPS.Common.Model.API;
 
-namespace DVHAsync
+namespace DVHAsyncCompare
 {
     public class Objectives
     {
-        public static PQMSummaryViewModel[] GetObjectives(string constraintPath)
+        public static PQMViewModel[] GetObjectives(string constraintPath)
         {
             List<string[]> CSVSheet = new List<string[]>();
 
             CSVSheet = parseCSV(constraintPath);
             //extract header and modify to indicate output values
-            PQMSummaryViewModel[] objectives = new PQMSummaryViewModel[CSVSheet.Count()];
+            PQMViewModel[] objectives = new PQMViewModel[CSVSheet.Count()];
             int i = 0;
 
             foreach (string[] line in CSVSheet)
@@ -25,7 +25,7 @@ namespace DVHAsync
                     continue;
                 if (line[0] == "Structure IDs")
                     continue;
-                objectives[i] = new PQMSummaryViewModel();
+                objectives[i] = new PQMViewModel();
                 // Structure ID
                 objectives[i].TemplateId = line[0];
                 // Structure Code

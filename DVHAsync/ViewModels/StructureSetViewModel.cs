@@ -2,7 +2,7 @@
 using System.Linq;
 using VMS.TPS.Common.Model.API;
 
-namespace DVHAsync
+namespace DVHAsyncCompare
 {
     public class StructureSetViewModel
     {

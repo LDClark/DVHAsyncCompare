@@ -3,7 +3,7 @@ using System.Windows;
 using VMS.TPS;
 using VMS.TPS.Common.Model.API;
 
-namespace DVHAsync.Runner
+namespace DVHAsyncCompare.Runner
 {
     public partial class App : System.Windows.Application
     {

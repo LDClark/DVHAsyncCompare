@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using System.Windows.Data;
 
-namespace DVHAsync
+namespace DVHAsyncCompare
 {
     // This converter duplicates all underscores
     // because WPF doesn't display single underscores

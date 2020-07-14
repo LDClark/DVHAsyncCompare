@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace DVHAsync
+namespace DVHAsyncCompare
 {
     public partial class ProgressDialog : Window
     {

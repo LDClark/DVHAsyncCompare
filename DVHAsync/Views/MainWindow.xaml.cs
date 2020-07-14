@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Interactivity;
 
-namespace DVHAsync
+namespace DVHAsyncCompare
 {
     public partial class MainWindow : Window
     {
